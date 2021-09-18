@@ -26,6 +26,10 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.get('/health', (req, res) => {
   res.send('ok');
 });
+
+app.get('/version', (_req, res) => {
+  res.send('1');
+});
 app.use(middleware.tokenExtractor);
 app.use('/api/login', loginRouter);
 app.use('/api/blogs', blogsRouter);
