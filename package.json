@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:test": "cd server && npm run start:test",
+    "install": "npm run install:all",
     "build": "cd client && npm run build && cd ..",
     "install:client": "cd client && npm install && cd ..",
     "install:server": "cd server && npm install && cd ..",
