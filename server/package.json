@@ -7,7 +7,7 @@
     "test": "cross-env NODE_ENV=test TEST_MONGODB_URI=$MONGODB_URI SECRET=$SECRET jest --verbose --runInBand --detectOpenHandles",
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "start:test": "cross-env NODE_ENV=test node index.js"
+    "start:test": "cross-env NODE_ENV=test TEST_MONGODB_URI=$MONGODB_URI SECRET=$SECRET node index.js"
   },
   "author": "",
   "license": "ISC",
