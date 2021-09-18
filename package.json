@@ -17,5 +17,8 @@
   },
   "author": "Cristian Fernandez",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "14.x"
+  }
 }
