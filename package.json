@@ -7,7 +7,7 @@
     "start:test": "cd server && npm run start:test",
     "build": "cd client && npm run build && cd ..",
     "install:client": "cd client && npm install && cd ..",
-    "install:server": "cd server && npm install && cd..",
+    "install:server": "cd server && npm install && cd ..",
     "install:all": "npm run install:server && npm run install:client",
     "test:e2e": "cd client && npm run cy:run && cd ..",
     "test:server": "cd server && npm run test && cd ..",
