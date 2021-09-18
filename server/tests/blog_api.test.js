@@ -10,6 +10,10 @@ const User = require('../models/user');
 const initialBlogs = helper.initialBlogs;
 const oneBlog = helper.listWithOneBlog[0];
 
+afterAll(async () => {
+  mongoose.connection.close(true);
+});
+
 describe('when there are 6 blogs', () => {
   beforeAll(async () => {
     await Blog.deleteMany({});
@@ -255,8 +259,4 @@ describe('when there is initially one user in db', () => {
     const usersAtEnd = await helper.usersInDb();
     expect(usersAtEnd).toHaveLength(usersAtStart.length);
   });
-});
-
-afterAll(async () => {
-  mongoose.connection.close();
 });
