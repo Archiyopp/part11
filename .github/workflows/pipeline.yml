@@ -1,0 +1,32 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: install
+        run: npm run install:all
+      - name: run build
+        run: npm run build
+      - name: run client tests
+        run: npm run test:client
+      - name: run server tests
+        run: npm run test:server
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start:test
+          wait-on: 'http://localhost:3001'
