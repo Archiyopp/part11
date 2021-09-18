@@ -18,6 +18,8 @@ jobs:
           node-version: '14.x'
       - name: install
         run: npm run install:all
+      - name: eslint
+        run: npm run eslint
       - name: run build
         run: npm run build
       - name: run client tests
