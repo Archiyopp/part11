@@ -11,7 +11,7 @@ const loginRouter = require('./controllers/login');
 const path = require('path');
 require('express-async-errors');
 
-mongoose.connect(config.MONGODB_URI, {
+mongoose.connect(config.MONGODB_URI || $MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
