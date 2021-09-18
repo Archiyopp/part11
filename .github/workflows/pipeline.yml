@@ -46,3 +46,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'bloglist-cicd-app' #Must be unique in Heroku
           heroku_email: 'crafernandezbe@unal.edu.co'
+          healthcheck: 'https://bloglist-cicd-app.herokuapp.com/health'
+          checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
+          delay: 4
