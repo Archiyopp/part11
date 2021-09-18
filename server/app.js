@@ -23,13 +23,13 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
+app.get('/health', (req, res) => {
+  res.send('ok');
+});
 app.use(middleware.tokenExtractor);
 app.use('/api/login', loginRouter);
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users', usersRouter);
-app.get('/health', (req, res) => {
-  res.send('ok');
-});
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing');
   app.use('/api/testing', testingRouter);

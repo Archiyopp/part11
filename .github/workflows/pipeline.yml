@@ -49,3 +49,4 @@ jobs:
           healthcheck: 'https://bloglist-cicd-app.herokuapp.com/health'
           checkstring: 'ok'
           rollbackonhealthcheckfailed: true
+          delay: 4
