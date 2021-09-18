@@ -17,7 +17,7 @@ describe('when there are 6 blogs', () => {
       let blogObject = new Blog(blog);
       await blogObject.save();
     }
-  });
+  }, 10000);
   test('blogs are returned as json', async () => {
     await api
       .get('/api/blogs')
